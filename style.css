@@ -4,15 +4,24 @@ body {
 	color: #444;
 }
 
-h1 {
+header {
 	text-align: center;
+}
+
+h1 {
+	display: inline-block;
+}
+
+button {
+	font-size: 1.5rem;
+	margin-left: 2rem;
 }
 
 main {
 	display: grid;
 	grid-template-columns: repeat(16, 1fr);
-	height: 75vh;
-	width: 75vh;
+	height: 70vh;
+	width: 70vh;
 	background-color: rgb(248, 72, 72);
 	padding: 3rem;
 	border-radius: 10px;
@@ -27,3 +36,5 @@ main div {
 main div.colored {
 	background-color: #666;
 }
+
+
