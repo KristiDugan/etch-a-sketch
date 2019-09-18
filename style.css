@@ -15,8 +15,8 @@ h1 {
 	text-align: center;
 	color: gold;
 	font-weight: 100;
-	font-size: 2.5rem;
-	margin: .5rem 0 .5rem;
+	font-size: 4rem;
+	margin: .25rem 0 .75rem;
 }
 
 .button-dials {
@@ -35,7 +35,7 @@ button {
 
 button:focus {
 	outline: none;
-	box-shadow: 0 0 2px 1px rgba(0, 0, 0, .4);
+	box-shadow: 0 0 2px 1px rgba(0, 0, 0, .2);
 }
 
 main {
@@ -44,26 +44,32 @@ main {
 	background-color: rgb(248, 72, 72);
 	padding: 1rem 4rem 1rem;
 	border-radius: 10px;
-	box-shadow: 0 0 20px 5px rgba(0, 0, 0, .2);
+	box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, .2);
 }
 
-#etch-pad {
+.shake {
+	animation-name: shake;
+	animation-duration: 1s;
+}
+
+#etch-screen {
 	display: grid;
 	grid-template-columns: repeat(16, 1fr);
 	height: 60vh;
 	margin: 0 auto 1rem;
+	background-color: #999;
 }
 
-#etch-pad div {
+#etch-screen div {
 	background-color: #999;
 	width: 100%;
 }
 
-#etch-pad div.colored {
+#etch-screen div.colored {
 	background-color: #666;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
 	h1 {
 		font-size: 2rem;
 	}
@@ -71,9 +77,24 @@ main {
 		width: 70vw;
 		padding: .8rem 3rem .8rem;
 	}
-	#etch-pad {
+	#etch-screen {
 		height: 70vw;
 	}
 }
 
 
+/* Animations */
+@keyframes shake {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(20deg);
+	}
+	50% {
+		transform: rotate(-20deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
