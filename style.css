@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Niconne&display=swap');
+
 body {
 	font-family: Helvetica, Arial, sans-serif;
 	font-weight: 300;
@@ -9,32 +11,69 @@ header {
 }
 
 h1 {
-	display: inline-block;
+	font-family: 'Niconne', cursive;
+	text-align: center;
+	color: gold;
+	font-weight: 100;
+	font-size: 2.5rem;
+	margin: .5rem 0 .5rem;
 }
 
+.button-dials {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
 button {
-	font-size: 1.5rem;
-	margin-left: 2rem;
+	font-size: 1rem;
+	margin: 0;
+	border-radius: 50%;
+	background-color: white;
+	width: 70px;
+	height: 70px;
+}
+
+button:focus {
+	outline: none;
+	box-shadow: 0 0 2px 1px rgba(0, 0, 0, .4);
 }
 
 main {
-	display: grid;
-	grid-template-columns: repeat(16, 1fr);
-	height: 70vh;
-	width: 70vh;
-	background-color: rgb(248, 72, 72);
-	padding: 3rem;
-	border-radius: 10px;
 	margin: 0 auto;
+	width: 60vh;
+	background-color: rgb(248, 72, 72);
+	padding: 1rem 4rem 1rem;
+	border-radius: 10px;
+	box-shadow: 0 0 20px 5px rgba(0, 0, 0, .2);
 }
 
-main div {
+#etch-pad {
+	display: grid;
+	grid-template-columns: repeat(16, 1fr);
+	height: 60vh;
+	margin: 0 auto 1rem;
+}
+
+#etch-pad div {
 	background-color: #999;
 	width: 100%;
 }
 
-main div.colored {
+#etch-pad div.colored {
 	background-color: #666;
+}
+
+@media screen and (max-width: 600px) {
+	h1 {
+		font-size: 2rem;
+	}
+	main {
+		width: 70vw;
+		padding: .8rem 3rem .8rem;
+	}
+	#etch-pad {
+		height: 70vw;
+	}
 }
 
 

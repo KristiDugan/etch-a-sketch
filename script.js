@@ -1,18 +1,18 @@
-const container = document.querySelector('main');
+const etchPad = document.querySelector('#etch-pad');
 const divMaker = num => {
 	const grid = num * num;
 	for (let i = 0; i < grid; i++) {
 		let div = document.createElement('div');
-		container.appendChild(div);
+		etchPad.appendChild(div);
 	}
 };
 divMaker(16); // Create default grid
 
-const etchPad = document.querySelector('main');
+
 let cells;
 
 const cellFinder = () => {
-	cells = document.querySelectorAll('main div');
+	cells = document.querySelectorAll('#etch-pad div');
 };
 
 const cellListener = () => {
