@@ -7,7 +7,7 @@ const divMaker = num => {
 		etchScreen.appendChild(div);
 	}
 };
-divMaker(16); // Create default grid
+divMaker(16); // Create default 16 x 16 grid
 
 let cells;
 
@@ -29,12 +29,26 @@ cellListener(); // Run for the first time
 const erase = () => {
 	etchASketch.classList.add('shake');
 	cells.forEach( (cell) => {
-		cell.classList.remove('colored');
+		if (cell.classList.contains('colored')) {
+			cell.classList.remove('colored');
+		}
 	});
 };
 
 const resize = () => {
 	let gridSize = prompt('What size grid this time?');
+	// Check that user entered a number, not text
+	while (!Number(gridSize)) {
+		gridSize = prompt('Please enter a number between 1 and 100');
+	}
+	// Check that the number they entered is an integer
+	while (!Number.isInteger(Number(gridSize))) {
+		gridSize = prompt('Please enter a whole number between 1 and 100');
+	}
+	// Check that the number they entered is greater than 0 but not too big
+	while (gridSize < 1 || gridSize > 100) {
+		gridSize = prompt('Please choose a value between 1 and 100');
+	}
 	etchScreen.style.cssText = `grid-template-columns: repeat(${gridSize}, 1fr);`;
 
 	// Empty old cells before making the new ones
