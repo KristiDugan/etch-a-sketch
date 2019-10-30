@@ -1,2 +1,3 @@
 # Etch-a-sketch
-From The Odin Project's [curriculum](http://www.theodinproject.com/courses/web-development-101/lessons/html-css)
+
+[Play Etch-a-sketch in the browser](https://kristidugan.github.io/etch-a-sketch/)
